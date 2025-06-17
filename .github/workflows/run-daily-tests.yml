@@ -26,4 +26,4 @@ jobs:
         run: |
           python test-case-01.py
           python test-case-02.py
-          python test_itrack_converted.py
+          python test_01iTrackLogin.py
