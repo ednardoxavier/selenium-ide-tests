@@ -2,7 +2,7 @@ name: Run Daily Selenium Tests
 
 on:
   schedule:
-    - cron: '12 15 * * *'   # Todos os dias às 12:12 BRT (15:12 UTC)
+    - cron: '0 10 * * *'   # Todos os dias às 07:00 BRT
   workflow_dispatch:        # Permite rodar manualmente
 
 jobs:
@@ -24,6 +24,8 @@ jobs:
 
       - name: Executar testes
         run: |
-          python test-case-01.py
-          python test-case-02.py
           python test_01iTrackLogin.py
+          python test_02iTrackLoginPerformance.py
+          python test_03iTrackSistemaMenuAbaVisoGeralPerformance.py
+          python test_04iTrackCadastro.py
+          python test_04iTrackCadastroeperformance.py
