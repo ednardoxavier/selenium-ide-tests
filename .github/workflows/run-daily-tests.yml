@@ -1,0 +1,28 @@
+name: Run Daily Selenium Tests
+
+on:
+  schedule:
+    - cron: '30 14 * * *'   # Todos os dias às 14:30 UTC (11:30 no Brasil)
+  workflow_dispatch:        # Permite rodar manualmente
+
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: |
+          pip install selenium webdriver-manager
+
+      - name: Executar testes
+        run: |
+          python test-case-01.py
+          python test-case-02.py
