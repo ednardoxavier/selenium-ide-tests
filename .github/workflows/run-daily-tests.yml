@@ -2,7 +2,7 @@ name: Run Daily Selenium Tests
 
 on:
   schedule:
-    - cron: '30 14 * * *'   # Todos os dias às 14:30 UTC (11:30 no Brasil)
+    - cron: '12 15 * * *'   # Todos os dias às 12:12 BRT (15:12 UTC)
   workflow_dispatch:        # Permite rodar manualmente
 
 jobs:
