@@ -24,9 +24,9 @@ jobs:
           pip install --upgrade pip
           pip install selenium webdriver-manager pytest pytest-html
 
-      - name: Executar testes com Pytest
+      - name: Executar testes
         run: |
-          pytest test_01iTrackLogin.py --html=report.html --self-contained-html
+          pytest test_01iTrackLogin.py
 
       - name: Salvar relatório
         uses: actions/upload-artifact@v4
