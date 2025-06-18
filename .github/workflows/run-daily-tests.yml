@@ -1,9 +1,10 @@
 name: Run Daily Selenium Tests
 
+# 🚀 Agendamento diário às 07:00 UTC (04:00 no horário de Brasília)
 on:
   schedule:
-    - cron: '0 10 * * *'  # 07:00 BRT
-  workflow_dispatch:
+    - cron: '0 7 * * *'
+  workflow_dispatch:  # Permite execução manual também
 
 jobs:
   selenium-tests:
@@ -20,14 +21,9 @@ jobs:
 
       - name: Instalar dependências
         run: |
-          pip install -r requirements.txt
+          pip install --upgrade pip
+          pip install selenium webdriver-manager
 
-      - name: Executar testes com pytest e gerar relatório
+      - name: Executar testes
         run: |
-          pytest --html=report.html --self-contained-html
-
-      - name: Salvar relatório como artefato
-        uses: actions/upload-artifact@v4
-        with:
-          name: Relatorio-de-Testes
-          path: report.html
+          python test_01iTrackLogin.py
