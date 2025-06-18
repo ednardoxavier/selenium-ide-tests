@@ -16,8 +16,7 @@ class Test04iTrackCadastro:
     def teardown_method(self, method):
         self.driver.quit()
 
-
-      def test_04iTrackCadastro(self):
+    def test_04iTrackCadastro(self):
         self.driver.get("https://reman.esparta.io/acesso?callbackUrl=https%3A%2F%2Freman.esparta.io%2F")
         self.driver.set_window_size(1722, 1034)
         self.driver.find_element(By.CSS_SELECTOR, ".mui-69i1ev").click()
@@ -64,4 +63,3 @@ class Test04iTrackCadastro:
         actions = ActionChains(self.driver)
         actions.move_to_element(element).perform()
         self.driver.find_element(By.CSS_SELECTOR, "#drawer-dashboard-link .MuiTypography-root").click()
-      
