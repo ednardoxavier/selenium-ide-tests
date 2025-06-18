@@ -26,5 +26,5 @@ jobs:
 
       - name: Executar testes
         run: |
-          python test_01iTrackLogin.py
-          python test_02iTrackLoginPerformance.py
+          pytest test_01iTrackLogin.py
+          pytest test_02iTrackLoginPerformance.py
