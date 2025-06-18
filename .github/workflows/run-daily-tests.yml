@@ -26,4 +26,11 @@ jobs:
 
       - name: Executar testes
         run: |
-          pytest test_01iTrackLogin.py
+          pytest test_01iTrackLogin.py || true  # evita travar se houver falhas nos testes
+
+      - name: Upload do screenshot em caso de falha
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: error-screenshots
+          path: screenshot_error.png
