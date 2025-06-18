@@ -16,8 +16,7 @@ class Test04iTrackCadastroeperformance:
     def teardown_method(self, method):
         self.driver.quit()
 
-
-      def test_04iTrackCadastroeperformance(self):
+    def test_04iTrackCadastroeperformance(self):
         self.driver.get("https://reman.esparta.io/acesso?callbackUrl=https%3A%2F%2Freman.esparta.io%2F")
         self.driver.set_window_size(1722, 1034)
         self.driver.find_element(By.CSS_SELECTOR, ".mui-69i1ev").click()
@@ -75,4 +74,3 @@ class Test04iTrackCadastroeperformance:
         self.driver.find_element(By.ID, "mui-p-14770-T-transporters").click()
         self.driver.find_element(By.CSS_SELECTOR, "#drawer-settings-link .MuiTypography-root").click()
         self.driver.find_element(By.CSS_SELECTOR, "#drawer-dashboard-link .MuiTypography-root").click()
-      
