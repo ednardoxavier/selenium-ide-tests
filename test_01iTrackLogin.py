@@ -25,7 +25,7 @@ class Test01iTrackLogin:
         self.driver.get("https://reman.esparta.io/acesso?callbackUrl=https%3A%2F%2Freman.esparta.io%2F")
         self.driver.set_window_size(1722, 1034)
 
-        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#products-agco-reman img"))).click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, "products-agco-reman"))).click()
 
         user_tower = self.wait.until(EC.presence_of_element_located((By.ID, "auth-user-tower")))
         self.actions.move_to_element(user_tower).perform()
