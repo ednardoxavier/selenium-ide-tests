@@ -32,7 +32,7 @@ class Test01iTrackLogin():
         self.driver.find_element(By.ID, "auth-user-tower").click()
         self.driver.find_element(By.ID, "signin-email-input").send_keys("agco@esparta.io")
         self.driver.find_element(By.ID, "signin-password-input").send_keys("admin")
-        self.driver.find_element(By.ID, "teste").click()
+        self.driver.find_element(By.ID, "testeednardoERRO").click()
         element = self.driver.find_element(By.ID, "signin-submit-button")
         actions = ActionChains(self.driver)
         actions.move_to_element(element).perform()
