@@ -26,10 +26,4 @@ jobs:
 
       - name: Executar testes
         run: |
-          pytest test_01iTrackLogin.py
-
-      - name: Salvar relatório
-        uses: actions/upload-artifact@v4
-        with:
-          name: selenium-test-report
-          path: report.html
+          python test_01iTrackLogin.py
