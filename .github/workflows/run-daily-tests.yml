@@ -1,13 +1,12 @@
-name: Run Daily Selenium Tests
+name: Run Selenium Tests
 
-# 🚀 Agendamento diário às 07:00 UTC (04:00 no horário de Brasília)
 on:
   schedule:
-    - cron: '0 7 * * *'
-  workflow_dispatch:  # Permite execução manual também
+    - cron: '0 7 * * *'  # Executa todos os dias às 07:00 UTC (04:00 BRT)
+  workflow_dispatch:
 
 jobs:
-  selenium-tests:
+  selenium-run:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,13 +23,12 @@ jobs:
           pip install --upgrade pip
           pip install selenium webdriver-manager pytest pytest-html
 
-      - name: Executar testes
-        run: |
-          pytest test_01iTrackLogin.py || true  # evita travar se houver falhas nos testes
+      - name: Executar testes com Pytest
+        run: pytest test_01iTrackLogin.py || true
 
-      - name: Upload do screenshot em caso de falha
+      - name: Salvar screenshot se houver falha
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: error-screenshots
+          name: selenium-screenshot
           path: screenshot_error.png
