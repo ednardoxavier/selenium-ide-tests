@@ -22,8 +22,8 @@ jobs:
       - name: Instalar dependências
         run: |
           pip install --upgrade pip
-          pip install selenium webdriver-manager pytest pytest-html
+          pip install selenium webdriver-manager
 
-      - name: Executar testes com Pytest
+      - name: Executar testes
         run: |
-          pytest --html=report.html --self-contained-html
+          python test_01iTrackLogin.py
