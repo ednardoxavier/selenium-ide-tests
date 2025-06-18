@@ -26,7 +26,7 @@ class Test01iTrackLogin:
 
     def test_01iTrackLogin(self):
         try:
-            self.driver.get("https://reman.esparta.io/acesso?callbackUrl=https%3A%2F%2Freman.esparta.io%2F")
+            self.driver.get("https://reman.esparta.io/acesso")
             self.driver.set_window_size(1722, 1034)
 
             # Aguarda o clique no card "AGCO Reman"
